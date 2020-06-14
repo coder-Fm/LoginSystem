@@ -7,6 +7,7 @@
   <?php
     require "header.php";
    ?>
+   
    <div class="login-form">
      <div class="form-title">
        <div class="signin-logo"><img src="images/logo.png" alt="logo" style="float:center;"></div>
