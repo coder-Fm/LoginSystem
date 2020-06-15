@@ -19,6 +19,7 @@
           <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="status.php">Log Out</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
           </ul>
         </div>
       </div>
