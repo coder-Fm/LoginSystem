@@ -1,18 +1,38 @@
-<?php
+<?php $page = 'login'; ?>
 
+<?php
+  session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
   <?php
     require "header.php";
    ?>
-   
-   <div class="login-form">
+
+
+   <form class="login-form" action="includes/login.inc.php" method="post">
      <div class="form-title">
        <div class="signin-logo"><img src="images/logo.png" alt="logo" style="float:center;"></div>
        <h1>Log In</h1>
+       <?php
+         if (isset($_GET['error'])) {
+           if ($_GET['error'] == "emptyfields") {
+             echo '<p class="signuperror">Please fill in all fields.</p>';
+           }
+           else if ($_GET['error'] == "wrongpwd") {
+             echo '<p class="signuperror">Wrong Username/Password.</p>';
+           }
+           else if ($_GET['error'] == "sqlerror") {
+             echo '<p class="signuperror">Invalid username/Password.</p>';
+           }
+
+         }
+
+       ?>
      </div>
+
      <label><input type="text" placeholder="Username" name="mailuid"></label>
      <label><input type="password" placeholder="Password" name="pwd"></label>
      <div class="remember-me">
@@ -31,10 +51,11 @@
        <button onclick="window.location.href='https://www.linkedin.com/uas/login';" class="media-links" type="button"><i class="fa fa-linkedin"></i></button>
        <button onclick="window.location.href='https://plus.google.com';" class="media-links" type="button"><i class="fa fa-google-plus"></i></button>
      </div>
-     <div class="main-footer">
-       <?php
-         require "footer.php";
-        ?>
-     </div>
+   </form>
+
+   <div class="main-footer">
+     <?php
+       require "footer.php";
+      ?>
    </div>
 </html>

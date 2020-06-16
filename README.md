@@ -11,3 +11,6 @@
 
 ## + Sign Up Page
 ![menu](img/signup.JPG)
+
+## + Contact Us Page
+![menu](img/contact.JPG)

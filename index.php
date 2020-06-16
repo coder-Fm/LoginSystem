@@ -1,6 +1,8 @@
+<?php $page = 'home'; ?>
 <?php
 
-?>
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,11 +20,13 @@
      <h2 class="sm-heading">
        Where Parallels Meet.
      </h2>
-     <div class="main-footer">
-       <?php
-         require "footer.php";
-        ?>
-     </div>
+
    </main>
+
+
+     <?php
+       require "home-footer.php";
+      ?>
+  
 
 </html>

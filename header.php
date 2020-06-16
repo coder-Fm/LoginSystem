@@ -1,3 +1,4 @@
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -6,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
   <title>EVA</title>
 </head>
 <body>
@@ -16,10 +18,10 @@
       <div>
         <div>
           <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="login.php">Sign In</a></li>
-            <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="contact.php">Contact Us</a></li>
+            <li><a class="<?php if($page=='home'){echo 'active';} ?>" href="index.php">Home</a></li>
+            <li><a class="<?php if($page=='login'){echo 'active';} ?>" href="login.php">Sign In</a></li>
+            <li><a class="<?php if($page=='signup'){echo 'active';} ?>" href="signup.php">Sign Up</a></li>
+            <li><a class="<?php if($page=='contact'){echo 'active';} ?>" href="contact.php">Contact Us</a></li>
           </ul>
         </div>
       </div>

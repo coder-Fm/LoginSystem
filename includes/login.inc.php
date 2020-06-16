@@ -14,6 +14,7 @@ if (isset($_POST['login-submit'])) {
     $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
+
       header("Location: ../login.php?error=sqlerror");
       exit();
     }
@@ -36,8 +37,9 @@ if (isset($_POST['login-submit'])) {
           header("Location: ../status.php?login=success");
           exit();
         }
-        else {
-          header("Location: ../status.php?error=wrongpwd");
+        else { // wrong username and password
+          header("Location: ../login.php?error=wrongpwd");
+
           exit();
         }
       }

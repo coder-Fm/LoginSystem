@@ -1,7 +1,7 @@
 
     <footer>
       <div class="main-footer">
-        &copy; Copyright Fatima 2020. All Rights Reserved.
+         Copyright &copy; 2020 Fatima. All Rights Reserved.
       </div>
     </footer>
   </body>
