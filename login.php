@@ -1,8 +1,9 @@
-<?php $page = 'login'; ?>
-
 <?php
   session_start();
 ?>
+
+<?php $page = 'login'; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,30 +12,39 @@
     require "header.php";
    ?>
 
-
-   <form class="login-form" action="includes/login.inc.php" method="post">
+   <form class="login-form" action="includes/_login.inc.php" method="post">
      <div class="form-title">
        <div class="signin-logo"><img src="images/logo.png" alt="logo" style="float:center;"></div>
        <h1>Log In</h1>
+
        <?php
-         if (isset($_GET['error'])) {
-           if ($_GET['error'] == "emptyfields") {
-             echo '<p class="signuperror">Please fill in all fields.</p>';
-           }
-           else if ($_GET['error'] == "wrongpwd") {
-             echo '<p class="signuperror">Wrong Username/Password.</p>';
-           }
-           else if ($_GET['error'] == "sqlerror") {
-             echo '<p class="signuperror">Invalid username/Password.</p>';
-           }
-
-         }
-
+          if (@$_GET['Empty']==true)
+          {
+        ?>
+          <p class="signuperror" >
+            <?php echo $_GET['Empty'] ?>
+          </p>
+       <?php
+          }
        ?>
+
+
+       <?php
+          if (@$_GET['Invalid']==true)
+          {
+        ?>
+          <p class="signuperror" >
+            <?php echo $_GET['Invalid'] ?>
+          </p>
+       <?php
+          }
+       ?>
+
+
      </div>
 
-     <label><input type="text" placeholder="Username" name="mailuid"></label>
-     <label><input type="password" placeholder="Password" name="pwd"></label>
+     <label><input type="text" placeholder="Username" name="uid" required></label>
+     <label><input type="password" placeholder="Password" name="pwd" required></label>
      <div class="remember-me">
        <input class="input-checkbox" type="checkbox" name="remember-me" id="checkbox1">
        <label class="label-checkbox" for="checkbox1">
@@ -50,6 +60,7 @@
        <button onclick="window.location.href='https://www.facebook.com/login.php';" class="media-links" type="button"><i class="fa fa-facebook"></i></button>
        <button onclick="window.location.href='https://www.linkedin.com/uas/login';" class="media-links" type="button"><i class="fa fa-linkedin"></i></button>
        <button onclick="window.location.href='https://plus.google.com';" class="media-links" type="button"><i class="fa fa-google-plus"></i></button>
+       <br><br><br><br>
      </div>
    </form>
 
