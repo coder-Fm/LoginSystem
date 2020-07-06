@@ -1,7 +1,3 @@
-<?php
-  session_start();
-?>
-
 <?php $page = 'login'; ?>
 
 
@@ -17,39 +13,13 @@
        <div class="signin-logo"><img src="images/logo.png" alt="logo" style="float:center;"></div>
        <h1>Log In</h1>
 
-       <?php
-          if (@$_GET['Empty']==true)
-          {
-        ?>
-          <p class="signuperror" >
-            <?php echo $_GET['Empty'] ?>
-          </p>
-       <?php
-          }
-       ?>
-
-
-       <?php
-          if (@$_GET['Invalid']==true)
-          {
-        ?>
-          <p class="signuperror" >
-            <?php echo $_GET['Invalid'] ?>
-          </p>
-       <?php
-          }
-       ?>
-
-
      </div>
 
-     <label><input type="text" placeholder="Username" name="uid" required></label>
+     <label><input type="text" placeholder="Username" name="mailuid" required></label>
      <label><input type="password" placeholder="Password" name="pwd" required></label>
      <div class="remember-me">
        <input class="input-checkbox" type="checkbox" name="remember-me" id="checkbox1">
-       <label class="label-checkbox" for="checkbox1">
-         <span class="text1">Remember me</span>
-       </label>
+
      </div>
      <button class="blue" type="submit" name="login-submit"><i class="fa fa-lock"></i>Login</button>
      <br><br>
